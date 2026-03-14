@@ -1,535 +1,593 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Currículo | Cristiano Magalhães da Silva</title>
-  <meta name="description" content="Currículo profissional de Cristiano Magalhães da Silva" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+
+  <title>Elvis de Souza Rocha — Supervisão de Manutenção</title>
+  <meta name="description" content="Currículo online de Elvis de Souza Rocha — Supervisão de Manutenção / Produção Industrial / Gestão de Equipes. 20 anos de experiência na área industrial." />
+
+  <!-- Open Graph / Twitter (melhora preview no WhatsApp/LinkedIn) -->
+  <meta property="og:title" content="Elvis de Souza Rocha — Supervisão de Manutenção" />
+  <meta property="og:description" content="Supervisão de Manutenção • Produção Industrial • Gestão de Equipes • GLP • 20 anos na indústria." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/foto-elvis.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon simples (opcional: substitua depois por um .ico/.png) -->
+  <link rel="icon" href="assets/foto-elvis.jpg" />
+
   <style>
-    :root {
+    :root{
       --bg: #0b1220;
-      --panel: #121a2b;
-      --panel-2: #172033;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --primary: #38bdf8;
-      --line: #243047;
-      --white: #ffffff;
-      --shadow: 0 10px 30px rgba(0,0,0,0.25);
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.06);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
+      --accent: #7c3aed;
+      --accent2:#22c55e;
+      --shadow: 0 18px 55px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 14px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f6f7fb;
+        --card: rgba(0,0,0,.06);
+        --card2: rgba(0,0,0,.04);
+        --text: rgba(0,0,0,.88);
+        --muted: rgba(0,0,0,.62);
+        --line: rgba(0,0,0,.12);
+        --shadow: 0 18px 55px rgba(0,0,0,.10);
+      }
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background:
-        radial-gradient(circle at top left, #172033 0%, #0b1220 45%),
-        linear-gradient(180deg, #0b1220, #0f172a);
+        radial-gradient(900px 500px at 15% 10%, rgba(124,58,237,.35), transparent 55%),
+        radial-gradient(900px 500px at 85% 15%, rgba(34,197,94,.26), transparent 55%),
+        radial-gradient(1200px 700px at 50% 105%, rgba(59,130,246,.22), transparent 60%),
+        var(--bg);
       color: var(--text);
-      line-height: 1.6;
-      padding: 24px;
+      line-height:1.55;
     }
-
-    .container {
+    a{color:inherit}
+    .wrap{
       max-width: 1100px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 24px;
+      padding: 22px 18px 48px;
     }
 
-    .sidebar,
-    .main {
-      background: rgba(18, 26, 43, 0.95);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .sidebar {
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 10px 2px 18px;
       position: sticky;
-      top: 24px;
-      height: fit-content;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,0));
     }
 
-    .hero {
-      padding: 32px 28px;
-      background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
-      color: var(--white);
-    }
-
-    .avatar {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 16px;
-      border: 2px solid rgba(255,255,255,0.35);
-    }
-
-    .hero h1 {
-      font-size: 28px;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 15px;
-      opacity: 0.95;
-    }
-
-    .sidebar-content {
-      padding: 24px 28px 28px;
-    }
-
-    .block {
-      margin-bottom: 28px;
-    }
-
-    .block h2 {
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--primary);
-      margin-bottom: 14px;
-    }
-
-    .contact-list,
-    .list {
-      list-style: none;
-    }
-
-    .contact-list li,
-    .list li {
-      margin-bottom: 10px;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    .tag-list {
-      display: flex;
+    .brand{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      font-weight:700;
+      letter-spacing:.2px;
       flex-wrap: wrap;
-      gap: 10px;
     }
-
-    .tag {
-      background: #0f172a;
-      border: 1px solid var(--line);
-      color: #dbeafe;
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
       padding: 8px 12px;
       border-radius: 999px;
       font-size: 13px;
-    }
-
-    .main {
-      padding: 30px;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-
-    .title-area h2 {
-      font-size: 30px;
-      margin-bottom: 6px;
-    }
-
-    .title-area p {
       color: var(--muted);
     }
 
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      text-decoration: none;
-      color: var(--white);
-      background: linear-gradient(135deg, #2563eb, #0ea5e9);
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn.secondary {
-      background: transparent;
-      border: 1px solid var(--line);
-      color: var(--text);
-    }
-
-    .section {
-      margin-bottom: 30px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .section h3 {
-      font-size: 20px;
-      margin-bottom: 14px;
-      color: var(--white);
-    }
-
-    .summary {
-      font-size: 16px;
-      color: #d6deeb;
-    }
-
-    .timeline {
-      display: grid;
+    .grid{
+      display:grid;
+      grid-template-columns: 1.12fr .88fr;
       gap: 18px;
     }
+    @media (max-width: 960px){
+      .grid{grid-template-columns: 1fr;}
+      header{position: static; background: none;}
+    }
 
-    .job {
-      background: var(--panel-2);
-      border: 1px solid var(--line);
-      border-radius: 16px;
+    .card{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
       padding: 18px;
+      backdrop-filter: blur(10px);
     }
 
-    .job-header {
-      display: flex;
-      justify-content: space-between;
+    .hero{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+    }
+    @media (max-width: 640px){
+      .hero{flex-direction: column;}
+    }
+
+    .avatar{
+      width: 112px;
+      height: 112px;
+      border-radius: 22px;
+      border:1px solid var(--line);
+      background: var(--card2);
+      overflow:hidden;
+      flex:0 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+    h1{
+      margin: 0 0 6px 0;
+      font-size: 30px;
+      line-height:1.15;
+      letter-spacing:.2px;
+    }
+    .subtitle{
+      margin: 0 0 10px 0;
+      color: var(--muted);
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      text-decoration:none;
+      font-weight:700;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+      cursor:pointer;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.22);}
+    .btn:focus{outline: 2px solid rgba(124,58,237,.6); outline-offset: 2px;}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(59,130,246,.78));
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn.success{
+      background: linear-gradient(135deg, rgba(34,197,94,.90), rgba(16,185,129,.68));
+      border-color: rgba(255,255,255,.18);
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+    .chip{
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+    }
+
+    .section-title{
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .item{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius2);
+      padding: 12px 12px;
+    }
+    .item h3{
+      margin:0 0 4px 0;
+      font-size: 16px;
+    }
+    .meta{color: var(--muted); font-size: 13px;}
+    .divider{height:1px;background:var(--line);margin:14px 0;}
+    .small{font-size:13px;color:var(--muted)}
+
+    .two-cols{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
       gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
+    }
+    @media (max-width: 640px){
+      .two-cols{grid-template-columns: 1fr;}
     }
 
-    .job h4 {
-      font-size: 18px;
-      color: var(--white);
+    .filebox{
+      border:1px dashed rgba(255,255,255,.28);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius2);
+      padding: 12px;
+    }
+    .filebox input{width:100%}
+
+    .preview{
+      margin-top: 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius2);
+      overflow: hidden;
+      display: none;
+    }
+    .preview iframe{
+      width:100%;
+      height: 420px;
+      border: 0;
+      display:block;
+    }
+    .preview img{
+      width:100%;
+      height:auto;
+      display:block;
     }
 
-    .job .period {
-      color: var(--primary);
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .job .role {
+    footer{
+      margin-top: 18px;
       color: var(--muted);
-      margin-bottom: 10px;
+      font-size: 13px;
+      text-align:center;
     }
 
-    .job ul {
-      padding-left: 18px;
+    code.inline{
+      padding:.15em .45em;
+      border-radius: 9px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--line);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: .95em;
     }
 
-    .job li {
-      margin-bottom: 8px;
-      color: #d6deeb;
+    .skip{
+      position:absolute;
+      left:-999px;
+      top:8px;
+      padding:10px 12px;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.55);
+      color: var(--text);
+      text-decoration:none;
     }
-
-    .footer {
-      text-align: center;
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media print {
-      body {
-        background: #fff;
-        color: #000;
-        padding: 0;
-      }
-
-      .container {
-        display: block;
-        max-width: 100%;
-      }
-
-      .sidebar, .main {
-        box-shadow: none;
-        border: none;
-        background: #fff;
-        color: #000;
-      }
-
-      .sidebar {
-        position: static;
-      }
-
-      .hero {
-        background: #fff;
-        color: #000;
-        padding-bottom: 12px;
-        border-bottom: 2px solid #ddd;
-      }
-
-      .actions {
-        display: none;
-      }
-
-      .tag, .job {
-        background: #fff;
-        color: #000;
-        border-color: #ddd;
-      }
-
-      .muted, .job .role, .title-area p, .footer {
-        color: #444 !important;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: static;
-      }
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 12px;
-      }
-
-      .main,
-      .sidebar-content,
-      .hero {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      .title-area h2 {
-        font-size: 24px;
-      }
-
-      .hero h1 {
-        font-size: 24px;
-      }
-    }
+    .skip:focus{left:12px; z-index: 999;}
   </style>
 </head>
-<body>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="hero">
-        <div class="avatar">CM</div>
-        <h1>Cristiano Magalhães da Silva</h1>
-        <p>Técnico de Manutenção II • Mecânica Industrial • Eletrotécnica</p>
-      </div>
 
-      <div class="sidebar-content">
-        <div class="block">
-          <h2>Contato</h2>
-          <ul class="contact-list">
-            <li><strong>Cidade:</strong> Duque de Caxias/RJ</li>
-            <li><strong>E-mail:</strong> cristiano.cristiano1978@gmail.com</li>
-            <li><strong>CNH:</strong> Categoria B</li>
-          </ul>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="wrap">
+    <header aria-label="Topo">
+      <div class="brand">
+        <span class="pill">Currículo Online</span>
+        <span class="pill">Duque de Caxias – RJ</span>
+        <span class="pill">Manutenção Industrial • GLP</span>
+      </div>
+      <a class="pill" href="#publicar">Publicar no LinkedIn/RH</a>
+    </header>
+
+    <div class="grid" id="conteudo">
+      <main class="card" aria-label="Currículo">
+        <section class="hero" aria-label="Apresentação">
+          <div class="avatar" title="Foto">
+            <img src="assets/foto-elvis.jpg" alt="Foto de Elvis de Souza Rocha" />
+          </div>
+
+          <div>
+            <h1>Elvis de Souza Rocha</h1>
+            <p class="subtitle">Supervisão de Manutenção • Produção Industrial • Gestão de Equipes</p>
+
+            <div class="actions" aria-label="Ações">
+              <a class="btn primary" href="assets/Elvis-De-Souza-Rocha-CV.pdf" target="_blank" rel="noreferrer">
+                Ver CV (PDF)
+              </a>
+              <a class="btn" href="assets/Elvis-De-Souza-Rocha-CV.pdf" download>
+                Baixar CV
+              </a>
+
+              <a class="btn" href="https://www.linkedin.com/in/elvis-rocha-equipamentos-glp-602a2492" target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+
+              <a class="btn success" href="https://wa.me/5521984258199" target="_blank" rel="noreferrer">
+                WhatsApp
+              </a>
+            </div>
+
+            <div class="chips" aria-label="Destaques">
+              <span class="chip">20 anos na área industrial</span>
+              <span class="chip">Manutenção preventiva/corretiva/programada</span>
+              <span class="chip">Gestão de ativos • custos • indicadores</span>
+              <span class="chip">GLP • carrosséis de enchimento</span>
+              <span class="chip">WEG/SEW • soft starters</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section aria-label="Objetivo">
+          <h2 class="section-title">Objetivo</h2>
+          <p>
+            Atuar na área de Supervisão de Manutenção / Produção Industrial / Gestão de Equipes,
+            contribuindo com minha experiência em processos industriais, liderança técnica, gestão de pessoas e melhoria contínua.
+          </p>
+        </section>
+
+        <section aria-label="Resumo">
+          <h2 class="section-title">Resumo Profissional</h2>
+          <p>
+            Profissional com 20 anos de experiência na área industrial, com atuação em empresas nacionais e multinacionais
+            de grande porte, especialmente no segmento de manutenção industrial, supervisão técnica e gestão de processos.
+            Sólida experiência em planejamento e execução de manutenção preventiva, corretiva e programada, gestão de ativos,
+            melhoria contínua, coordenação de equipes técnicas e acompanhamento de indicadores de desempenho.
+          </p>
+        </section>
+
+        <div class="two-cols" aria-label="Formação e Cursos">
+          <section>
+            <h2 class="section-title">Formação</h2>
+            <ul class="list">
+              <li class="item">
+                <h3>Superior em Processos Gerenciais</h3>
+                <div class="meta">Universidade Veiga de Almeida</div>
+              </li>
+              <li class="item">
+                <h3>Técnico em Mecânica</h3>
+                <div class="meta">Escola Técnica Rezende Rammel</div>
+              </li>
+              <li class="item">
+                <h3>Técnico em Mecatrônica</h3>
+                <div class="meta">Escola Técnica Rezende Rammel</div>
+              </li>
+              <li class="item">
+                <h3>Pós-graduação (em andamento)</h3>
+                <div class="meta">Neurociência, Comunicação e Desenvolvimento Humano</div>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="section-title">Cursos Complementares</h2>
+            <ul class="list">
+              <li class="item"><h3>Indústria 4.0</h3><div class="meta">PUCRS</div></li>
+              <li class="item"><h3>Liderança e Empreendedorismo</h3><div class="meta">UVA</div></li>
+              <li class="item"><h3>Gestão de Conflitos</h3><div class="meta">ENAP</div></li>
+              <li class="item"><h3>Gestão de Riscos</h3><div class="meta">ENAP</div></li>
+            </ul>
+          </section>
         </div>
 
-        <div class="block">
-          <h2>Competências</h2>
-          <div class="tag-list">
-            <span class="tag">Manutenção preventiva</span>
-            <span class="tag">Manutenção corretiva</span>
-            <span class="tag">Mecânica industrial</span>
-            <span class="tag">Redes pneumáticas</span>
-            <span class="tag">Bombas de GLP</span>
-            <span class="tag">Compressores</span>
-            <span class="tag">Motoredutores</span>
-            <span class="tag">Comandos elétricos</span>
-            <span class="tag">Instrumentação</span>
-            <span class="tag">Kaizen</span>
+        <div class="divider"></div>
+
+        <section aria-label="Experiência">
+          <h2 class="section-title">Experiência Profissional</h2>
+          <ul class="list">
+            <li class="item">
+              <h3>MAKEEN ENERGY DO BRASIL LTDA — Supervisor de Manutenção</h3>
+              <div class="meta">05/2025 – Atual</div>
+              <div class="small">
+                Supervisão das atividades de manutenção; gestão de pessoas (feedbacks, desenvolvimento); gestão de conflitos e absenteísmo;
+                coordenação de equipes; participação em reuniões gerenciais; apresentação e acompanhamento de indicadores;
+                alinhamento com clientes; gestão de custos e ativos; melhoria contínua; segurança e confiabilidade operacional.
+              </div>
+            </li>
+
+            <li class="item">
+              <h3>MAKEEN ENERGY DO BRASIL LTDA — Técnico de Manutenção IV</h3>
+              <div class="meta">12/2020 – 05/2025</div>
+              <div class="small">
+                Planejamento e execução de manutenção; atuação em equipamentos da indústria de GLP; carrosséis P13, P20 e P45;
+                parametrização de inversores WEG e SEW; instalação/manutenção de soft starters; lanças telescópicas; detectores de vazamento;
+                balanças; componentes elétricos/mecânicos/eletrônicos/pneumáticos; 5S; melhorias em equipamentos e processos.
+              </div>
+            </li>
+
+            <li class="item">
+              <h3>MAKEEN ENERGY DO BRASIL LTDA — Técnico de Manutenção III</h3>
+              <div class="meta">05/2013 – 06/2018</div>
+              <div class="small">
+                Manutenção preventiva e corretiva; suporte técnico; melhoria contínua e confiabilidade; análise de falhas e melhorias operacionais.
+              </div>
+            </li>
+
+            <li class="item">
+              <h3>CONSIGÁS DISTRIBUIDORA DE GÁS LTDA — Mecânico de Manutenção</h3>
+              <div class="meta">06/2019 – 12/2020</div>
+              <div class="small">
+                Manutenção emergencial/corretiva programada/preventiva; equipamentos mecânicos/elétricos/pneumáticos; lubrificação de transportadores;
+                compressores de ar Atlas Copco; cabine de pintura; carrossel industrial; reuniões de desempenho e melhorias.
+              </div>
+            </li>
+
+            <li class="item">
+              <h3>COPAGAZ DISTRIBUIDORA S/A — Ajudante de Mecânico</h3>
+              <div class="meta">03/2007 – 12/2012</div>
+              <div class="small">
+                Manutenção em carrossel de envase de GLP Vaira y Del Grosso; transportadores telescópicos; bombas de GLP/tinta; compressores;
+                foco em durabilidade, segurança operacional e prazos de envase.
+              </div>
+            </li>
+
+            <li class="item">
+              <h3>EMI S/A — Caldeireiro</h3>
+              <div class="meta">10/2005 – 05/2006</div>
+              <div class="small">
+                Confecção, reparo e instalação de peças; fabricação e manutenção de caldeiras, tanques e reservatórios; corte e modelagem de materiais;
+                fabricação de esquadrias/portas/grades e peças similares.
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section aria-label="Competências">
+          <h2 class="section-title">Competências</h2>
+          <p class="small">
+            Gestão de pessoas • liderança de equipes • gestão de conflitos • planejamento de manutenção • manutenção preventiva e corretiva •
+            gestão de ativos • controle de absenteísmo • gestão de custos • melhoria contínua • análise e solução de problemas •
+            boa comunicação e oratória • feedback e desenvolvimento de equipe • alinhamento operacional com clientes •
+            noções das normas NBR 13523 e NBR 5410.
+          </p>
+        </section>
+      </main>
+
+      <aside class="card" id="publicar" aria-label="Publicação e arquivos">
+        <h2 class="section-title">Publicar / Enviar para LinkedIn e RH</h2>
+
+        <div class="item">
+          <h3>1) Use o link do site + anexe o PDF</h3>
+          <p class="small" style="margin:8px 0 0 0;">
+            GitHub Pages hospeda seu site e seu PDF (link público). Em portais de RH, você normalmente anexa o PDF.
+            Quando existir campo “Website/Portfólio”, cole o link do site.
+          </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="filebox" aria-label="Upload local">
+          <strong>Upload (local) + pré-visualização</strong>
+          <p class="small">
+            Selecione um arquivo para pré-visualizar aqui (não envia para servidor).
+          </p>
+          <input id="file" type="file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" />
+          <p id="fileInfo" class="small" style="margin:10px 0 0 0;"></p>
+
+          <div id="preview" class="preview" aria-label="Pré-visualização"></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="item">
+          <h3>Link direto do CV</h3>
+          <p class="small">
+            Depois de publicar no GitHub Pages:
+            <code class="inline">https://SEUUSUARIO.github.io/SEUREPOSITORIO/assets/Elvis-De-Souza-Rocha-CV.pdf</code>
+          </p>
+          <div class="actions">
+            <button class="btn" id="copyCvLink" type="button">Copiar modelo</button>
+            <button class="btn" id="copySiteLink" type="button">Copiar modelo do site</button>
           </div>
         </div>
 
-        <div class="block">
-          <h2>Formação</h2>
-          <ul class="list">
-            <li>Técnico em Mecânica</li>
-            <li>Técnico em Eletrotécnica</li>
-            <li>Eletricista Predial – SENAI</li>
-            <li>Instrumentista Industrial – SENAI</li>
-            <li>Mecânico de Manutenção Hidropneumático – SENAI</li>
-            <li>Comandos Elétricos – SENAI</li>
-            <li class="muted">Ensino Médio Completo</li>
+        <div class="divider"></div>
+
+        <div class="item">
+          <h3>Checklist rápido (LinkedIn / RH)</h3>
+          <ul class="small" style="margin:8px 0 0 16px;">
+            <li>LinkedIn: adicione o link do site em “Informações de contato” e em “Destaques”.</li>
+            <li>RH/ATS: anexe o PDF e, quando houver campo “Portfólio/Website”, cole o link do site.</li>
+            <li>Padronize o nome do PDF (ex.: <code class="inline">Elvis-De-Souza-Rocha-CV.pdf</code>).</li>
           </ul>
         </div>
 
-        <div class="block">
-          <h2>Cursos</h2>
-          <ul class="list">
-            <li>HUET e Salvatagem</li>
-            <li>Entrante de Espaço Confinado</li>
-            <li>Encanador Industrial</li>
-            <li>Lixador</li>
-          </ul>
+        <div class="divider"></div>
+
+        <div class="item">
+          <h3>Contatos</h3>
+          <p class="small" style="margin:8px 0 0 0;">
+            WhatsApp: (21) 98425-8199<br/>
+            LinkedIn: <a href="https://www.linkedin.com/in/elvis-rocha-equipamentos-glp-602a2492" target="_blank" rel="noreferrer">/in/elvis-rocha-equipamentos-glp-602a2492</a>
+          </p>
         </div>
-      </div>
-    </aside>
+      </aside>
+    </div>
 
-    <main class="main">
-      <div class="topbar">
-        <div class="title-area">
-          <h2>Currículo Profissional</h2>
-          <p>Perfil com foco em manutenção industrial, mecânica e melhoria contínua.</p>
-        </div>
-
-        <div class="actions">
-          <button class="btn" onclick="window.print()">Baixar em PDF</button>
-          <a class="btn secondary" href="mailto:cristiano.cristiano1978@gmail.com">Entrar em contato</a>
-        </div>
-      </div>
-
-      <section class="section">
-        <h3>Resumo Profissional</h3>
-        <p class="summary">
-          Profissional com sólida experiência em manutenção industrial, mecânica, encanamento industrial
-          e eletrotécnica. Atuação em manutenção preventiva e corretiva de carrosséis automáticos,
-          transportadores, lanças telescópicas, redes pneumáticas, motoredutores, bombas de GLP,
-          compressores, cabines de pintura, bombas de tinta e válvulas industriais.
-          Participação em reuniões e ações de melhoria contínua com foco em Kaizen.
-        </p>
-      </section>
-
-      <section class="section">
-        <h3>Experiência Profissional</h3>
-        <div class="timeline">
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <h4>Makeen</h4>
-                <div class="role">Técnico de Manutenção II</div>
-              </div>
-              <div class="period">07/2022 a 03/2026</div>
-            </div>
-            <ul>
-              <li>Manutenção preventiva e corretiva em carrosséis Kosan tradicional e Siraga.</li>
-              <li>Manutenção em transportadores industriais.</li>
-              <li>Manutenção em lanças telescópicas Transmac e URAV.</li>
-              <li>Manutenção em redes pneumáticas e motoredutores.</li>
-              <li>Manutenção em bombas de GLP, compressores, cabines de pintura e bombas de tinta.</li>
-              <li>Participação em reuniões de melhoria contínua (Kaizen).</li>
-            </ul>
-          </article>
-
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <h4>Consigaz</h4>
-                <div class="role">Mecânico de Manutenção</div>
-              </div>
-              <div class="period">03/2021 a 06/2022</div>
-            </div>
-            <ul>
-              <li>Manutenção em carrossel Siraga e transportadores.</li>
-              <li>Manutenção em redes pneumáticas, motoredutores e compressores.</li>
-              <li>Manutenção em bombas de GLP, bombas de tinta e cabines de pintura.</li>
-              <li>Manutenção em válvulas de tanque de 60 toneladas.</li>
-            </ul>
-          </article>
-
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <h4>EBSE</h4>
-                <div class="role">Encanador Industrial</div>
-              </div>
-              <div class="period">10/2019 a 02/2020</div>
-            </div>
-          </article>
-
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <h4>Vellar Offshore</h4>
-                <div class="role">Encanador Industrial</div>
-              </div>
-              <div class="period">01/2016 a 07/2016</div>
-            </div>
-          </article>
-
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <h4>EISA</h4>
-                <div class="role">Encanador Industrial</div>
-              </div>
-              <div class="period">12/2014 a 12/2015</div>
-            </div>
-          </article>
-
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <h4>Supergasbrás (SHV)</h4>
-                <div class="role">Ajudante de Produção</div>
-              </div>
-              <div class="period">02/2003 a 03/2014</div>
-            </div>
-          </article>
-
-          <article class="job">
-            <div class="job-header">
-              <div>
-                <h4>Forças Armadas – Aeronáutica</h4>
-                <div class="role">Serviço Militar</div>
-              </div>
-              <div class="period">02/1997 a 03/2001</div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h3>Formação Acadêmica</h3>
-        <ul>
-          <li>Ensino Médio Completo</li>
-          <li>Técnico em Mecânica – Escola Técnica Sandra Silva</li>
-          <li>Técnico em Eletrotécnica – Ibest Escola</li>
-          <li>Eletricista Predial – SENAI</li>
-          <li>Instrumentista Industrial – SENAI</li>
-          <li>Mecânico de Manutenção Hidropneumático – SENAI</li>
-          <li>Comandos Elétricos – SENAI</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h3>Cursos Complementares</h3>
-        <ul>
-          <li>HUET e Salvatagem – SP Treinamentos</li>
-          <li>Entrante de Espaço Confinado – Supergasbrás</li>
-          <li>Encanador Industrial – Atenew</li>
-          <li>Lixador – Atenew</li>
-        </ul>
-      </section>
-
-      <div class="footer">
-        © 2026 • Currículo profissional de Cristiano Magalhães da Silva
-      </div>
-    </main>
+    <footer>
+      © <span id="year"></span> Elvis de Souza Rocha — Hospedado no GitHub Pages
+    </footer>
   </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Upload local + preview (PDF e imagem)
+    const file = document.getElementById("file");
+    const fileInfo = document.getElementById("fileInfo");
+    const preview = document.getElementById("preview");
+
+    function clearPreview(){
+      preview.style.display = "none";
+      preview.innerHTML = "";
+    }
+
+    file.addEventListener("change", () => {
+      const f = file.files && file.files[0];
+      if (!f) { fileInfo.textContent = ""; clearPreview(); return; }
+
+      const sizeMB = (f.size / (1024*1024)).toFixed(2);
+      fileInfo.textContent = `Selecionado: ${f.name} (${sizeMB} MB)`;
+
+      const url = URL.createObjectURL(f);
+      clearPreview();
+
+      // Pré-visualização só para PDF e imagem (doc/docx não dá pra renderizar nativamente no navegador)
+      if (f.type === "application/pdf") {
+        preview.style.display = "block";
+        preview.innerHTML = `<iframe title="Pré-visualização do PDF" src="${url}"></iframe>`;
+      } else if (f.type.startsWith("image/")) {
+        preview.style.display = "block";
+        preview.innerHTML = `<img alt="Pré-visualização da imagem" src="${url}" />`;
+      } else {
+        clearPreview();
+      }
+    });
+
+    // Copiar links modelo
+    document.getElementById("copyCvLink").addEventListener("click", async () => {
+      const txt = "https://SEUUSUARIO.github.io/SEUREPOSITORIO/assets/Elvis-De-Souza-Rocha-CV.pdf";
+      try { await navigator.clipboard.writeText(txt); alert("Modelo do link do CV copiado."); }
+      catch(e){ prompt("Copie o link abaixo:", txt); }
+    });
+
+    document.getElementById("copySiteLink").addEventListener("click", async () => {
+      const txt = "https://SEUUSUARIO.github.io/SEUREPOSITORIO/";
+      try { await navigator.clipboard.writeText(txt); alert("Modelo do link do site copiado."); }
+      catch(e){ prompt("Copie o link abaixo:", txt); }
+    });
+  </script>
 </body>
 </html>
